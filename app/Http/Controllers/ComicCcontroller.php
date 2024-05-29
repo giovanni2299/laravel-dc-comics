@@ -16,7 +16,7 @@ class ComicCcontroller extends Controller
 
     public function show(Comic $comic)
     {
-        return view('comics.show', compact('comics'));
+        return view('comics.show', compact('comic'));
     }
 
     public function create()
