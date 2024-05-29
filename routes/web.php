@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ComicCcontroller;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/comics', [ComicCcontroller::class, 'index'])->name('comics.index');
+
+Route::get('/comics/create', [ComicCcontroller::class, 'create'])->name('comics.create');
+
+Route::get('/comics/{pasta}', [ComicCcontroller::class, 'show'])->name('comics.show');
+
+Route::post('/comics', [ComicCcontroller::class, 'store'])->name('comics.store');
