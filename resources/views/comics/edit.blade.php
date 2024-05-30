@@ -11,7 +11,7 @@
         <h2 class="fs-2">Modifica fumetto: {{$comic->title}}</h2>
       </div>
       <div class="container">
-        <form action="{{ route('comics.update') }}" method="POST">
+        <form action="{{ route('comics.update', $comic) }}" method="POST">
   
           {{-- Cross Site Request Forgering --}}
           @csrf 
@@ -29,7 +29,7 @@
           </div>
   
           <div class="mb-3">
-            <label for="sale_date" class="form-label">description</label>
+            <label for="sale_date" class="form-label">data di rilascio</label>
             <input type="text" name="sale_date" class="form-control" id="sale_date" placeholder="Anno di rilascio" value="{{$comic->sale_date}}">
           </div>
   

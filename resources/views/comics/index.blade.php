@@ -52,6 +52,18 @@
                 <td>{{$comic->series }}</td>
                 <td>{{$comic->sale_date }}</td>
                 <td>{{$comic->type }}</td>
+                <td>
+                  <div class="d-felx gap-2">
+                    <a href="{{ route('comics.edit',$comic) }}">Edit</a>
+                    <form action="{{ route('comics.destroy',$comic) }}" method="POST">
+                      @method('DELETE')
+                      @csrf
+      
+                      <button class="btn btn-link link-danger">Trash</button>
+      
+                    </form>
+                  </div>
+                </td>
 
 
               </tr>
