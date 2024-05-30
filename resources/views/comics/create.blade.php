@@ -39,6 +39,11 @@
             <label for="series" class="form-label">Serie</label>
             <input type="text" name="series" class="form-control" id="series" placeholder="Tipo di serie">
           </div>
+
+          <div class="mb-3">
+            <label for="type" class="form-label">Tipologia</label>
+            <input type="text" name="type" class="form-control" id="type" placeholder="Tipo del fumetto">
+          </div>
   
           <div class="mb-3">
             <label for="description" class="form-label">Anno di rilascio</label>

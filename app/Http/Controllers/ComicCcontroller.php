@@ -32,21 +32,26 @@ class ComicCcontroller extends Controller
         // recuperiamo i dati che arrivano dal form
         $form_data = $request->all();
 
+        //creao l'instanza popolo i dati e li salvo nel db
+        $new_comic = Comic::create($form_data);
+
         //creo l'instanza di Comic
-        $new_comic = new Comic();
+        // $new_comic = new Comic();
 
         // popoliamo l'instanza di Comic con i dati dal form 
-        $new_comic->title = $form_data['title'];
-        $new_comic->description = $form_data['description'];
-        $new_comic->thumb = $form_data['thumb'];
-        $new_comic->price = $form_data['price'];
-        $new_comic->series = $form_data['series'];
-        $new_comic->type = $form_data['type'];
+        // $new_comic->title = $form_data['title'];
+        // $new_comic->description = $form_data['description'];
+        // $new_comic->thumb = $form_data['thumb'];
+        // $new_comic->price = $form_data['price'];
+        // $new_comic->series = $form_data['series'];
+        // $new_comic->sale_date = $form_data['sale_date'];
+        // $new_comic->type = $form_data['type'];
 
         // // salviamo l'istanza ->save()
-        $new_comic->save();
+        // $new_comic->save();
 
-        return redirect()->route('comics.show', $new_comic);
+        // return redirect()->route('comics.show', $new_comic);
+        return to_route('comics.show', $new_comic);
     }
 
     public function edit(Comic $comic)
