@@ -51,7 +51,7 @@ class ComicCcontroller extends Controller
         // $new_comic->save();
 
         // return redirect()->route('comics.show', $new_comic);
-        return to_route('comics.show', $new_comic);
+        return to_route('comics.index', $new_comic);
     }
 
     public function edit(Comic $comic)
@@ -69,7 +69,7 @@ class ComicCcontroller extends Controller
         $comic->save();
 
         //redirect alla comics show
-        return to_route('comics.show', $comic);
+        return to_route('comics.index', $comic);
     }
 
     public function destroy(Comic $comic)

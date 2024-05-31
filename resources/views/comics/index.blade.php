@@ -54,7 +54,10 @@
                 <td>{{$comic->type }}</td>
                 <td>
                   <div class="d-felx gap-2">
-                    <a href="{{ route('comics.edit',$comic) }}">Edit</a>
+                    <div>
+                      <a href="{{ route('comics.edit',$comic) }}">Edit</a>
+
+                    </div>
                     <form action="{{ route('comics.destroy',$comic) }}" method="POST">
                       @method('DELETE')
                       @csrf
